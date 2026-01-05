@@ -1,5 +1,7 @@
 # Frontend GUI for Cryptocurrency Price Checker
 
+![Cryptocurrency Price Checker](crypto.png)
+
 ## نحوه اجرا
 
 ### 1. اجرای FastAPI (Backend)
