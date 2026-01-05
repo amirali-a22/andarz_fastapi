@@ -21,6 +21,12 @@ async function fetchPrices() {
         return;
     }
     
+    // Additional validation: alphanumeric only, max 10 characters
+    if (!/^[A-Z0-9]{1,10}$/.test(cryptoCode)) {
+        showError('Invalid cryptocurrency code. Use only letters and numbers (1-10 characters).');
+        return;
+    }
+    
     // Show loading state
     document.getElementById('loading').classList.remove('hidden');
     document.getElementById('search-btn').disabled = true;
