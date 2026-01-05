@@ -1,9 +1,18 @@
 import requests
 from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
+
 from env import env
 
 app = FastAPI()
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 # Target currencies to display prices in
 TARGET_CURRENCIES = ["USD", "EUR", "BRL", "GBP", "AUD"]
 API_KEY = env("API_KEY")

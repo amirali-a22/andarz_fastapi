@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cryptocurrency Price Checker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>💰 Cryptocurrency Price Checker</h1>
+            <p>Get real-time cryptocurrency prices in multiple currencies</p>
+        </header>
+
+        <div class="search-section">
+            <div class="input-group">
+                <label for="crypto-input">Enter Cryptocurrency Symbol:</label>
+                <div class="input-wrapper">
+                    <input 
+                        type="text" 
+                        id="crypto-input" 
+                        placeholder="e.g., BTC, ETH, SOL"
+                        autocomplete="off"
+                    >
+                    <button id="search-btn" onclick="fetchPrices()">Search</button>
+                </div>
+                <small>Examples: BTC, ETH, SOL, ADA, DOGE, XRP</small>
+            </div>
+        </div>
+
+        <div id="loading" class="loading hidden">
+            <div class="spinner"></div>
+            <p>Fetching prices...</p>
+        </div>
+
+        <div id="error" class="error hidden"></div>
+
+        <div id="results" class="results hidden">
+            <h2 id="crypto-name"></h2>
+            <div class="prices-grid" id="prices-grid"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
