@@ -4,7 +4,19 @@
 
 ## نحوه اجرا
 
-### 1. اجرای FastAPI (Backend)
+### روش 1: استفاده از Docker 
+
+```bash
+docker-compose up -d --build
+```
+
+سرور روی `http://localhost:8000` اجرا می‌شود.
+
+**نکته**: مطمئن شوید فایل `.env` با `API_KEY` موجود است.
+
+### روش 2: اجرای دستی
+
+#### 1. اجرای FastAPI (Backend)
 
 ```bash
 # از پوشه اصلی پروژه
@@ -17,7 +29,7 @@ fastapi dev main.py
 
 سرور روی `http://localhost:8000` اجرا می‌شود.
 
-### 2. اجرای Frontend
+#### 2. اجرای Frontend
 
 ```bash
 # از پوشه frontend

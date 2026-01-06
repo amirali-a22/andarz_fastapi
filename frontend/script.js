@@ -1,4 +1,17 @@
-const API_BASE_URL = 'http://localhost:8000';
+// API URL - use relative path when in Docker (nginx proxy), absolute for local dev
+// In Docker: nginx proxies /cryptocurrency/ to api:8000
+// For local dev: use localhost:8000
+const getApiUrl = () => {
+    const host = window.location.hostname;
+    // If running locally (not in Docker)
+    if (host === 'localhost' || host === '127.0.0.1') {
+        return 'http://localhost:8000';
+    }
+    // In Docker, use relative URL (nginx will proxy)
+    return '';
+};
+
+const API_BASE_URL = getApiUrl();
 
 // Allow Enter key to trigger search
 document.getElementById('crypto-input').addEventListener('keypress', function(e) {
